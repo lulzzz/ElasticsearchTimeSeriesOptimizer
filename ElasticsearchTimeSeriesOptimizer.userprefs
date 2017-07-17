@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{3716476F-5637-49F3-99D2-F350CD0FD929}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ElasticsearchTimeSeriesOptimizer/Controllers/ShrinkController.cs">
+    <Files>
+      <File FileName="ElasticsearchTimeSeriesOptimizer/Program.cs" Line="22" Column="1" />
+      <File FileName="ElasticsearchTimeSeriesOptimizer/Controllers/ShrinkController.cs" Line="57" Column="47" />
+      <File FileName="ElasticsearchTimeSeriesOptimizer/Domain/ShrinkRequestBody.cs" Line="13" Column="46" />
+      <File FileName="ElasticsearchTimeSeriesOptimizer/Domain/ShrinkByDateRequestBody.cs" Line="16" Column="9" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.ElasticsearchTimeSeriesOptimizer PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
