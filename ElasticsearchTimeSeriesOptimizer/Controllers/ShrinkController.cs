@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Globalization;
+using Elasticsearch.Net;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using StoneCo.ElasticsearchTimeSeriesOptimizer.ConfigurationContracts;
+using StoneCo.ElasticsearchTimeSeriesOptimizer.Processors;
 using StoneCo.ElasticsearchTimeSeriesOptimizer.ServiceLayer.Contracts;
 using StoneCo.Infrastructure;
 
@@ -14,14 +18,51 @@ namespace StoneCo.ElasticsearchTimeSeriesOptimizer.Controllers
     public class ShrinkController : IShrinkController
     {
 
-        /// <summary>
-        /// Initializes a new instance of the
-        /// <see cref="T:StoneCo.ElasticsearchTimeSeriesOptimizer.Controllers.ShrinkController"/> class.
-        /// </summary>
-        public ShrinkController()
+		#region Private properties
+
+		/// <summary>
+		/// Gets or sets the processor.
+		/// </summary>
+		/// <value>The processor.</value>
+		private IElasticsearchProcessor Processor { get; set; }
+
+		#endregion
+
+		#region Constructors
+
+        /*
+		/// <summary>
+		/// Base constructor of 
+		/// <see cref="T:StoneCo.ElasticsearchTimeSeriesOptimizer.Controllers.ShrinkController"/> class.
+		/// </summary>
+		public ShrinkController()
         {
 
         }
+        */
+
+        /// <summary>
+        /// Initializes a new instance of the
+        /// <see cref="T:StoneCo.ElasticsearchTimeSeriesOptimizer.Controllers.ShrinkController"/> class with settings.
+        /// </summary>
+        /// <param name="settings">Settings.</param>
+        public ShrinkController(IOptions<ElasticsearchProcessorSettings> settings)
+        {
+            Processor = new ElasticsearchProcessor(settings.Value);
+        }
+
+        /*
+        /// <summary>
+        /// Initializes a new instance of the
+        /// <see cref="T:StoneCo.ElasticsearchTimeSeriesOptimizer.Controllers.ShrinkController"/> class a processor.
+        /// </summary>
+        /// <param name="processor">Processor.</param>
+        public ShrinkController(IElasticsearchProcessor processor)
+        {
+            Processor = processor ?? throw new ArgumentNullException(nameof(processor));
+        }
+        */
+        #endregion
 
         /// <summary>
         /// Performs a shrink action on a single index.
@@ -33,7 +74,6 @@ namespace StoneCo.ElasticsearchTimeSeriesOptimizer.Controllers
         public BaseServiceResponse<ShrinkResponseBody> Shrink([FromBody]ShrinkRequestBody request)
         {
             BaseServiceResponse<ShrinkResponseBody> response = new BaseServiceResponse<ShrinkResponseBody>();
-
             try
             {
 
@@ -50,6 +90,9 @@ namespace StoneCo.ElasticsearchTimeSeriesOptimizer.Controllers
                 }
 
                 #endregion
+
+                // Performs the shrink operation on index.
+                ElasticsearchResponse<VoidResponse> operationResponse = Processor.Shrink(request.IndexName);
 
             }
             catch(Exception ex){

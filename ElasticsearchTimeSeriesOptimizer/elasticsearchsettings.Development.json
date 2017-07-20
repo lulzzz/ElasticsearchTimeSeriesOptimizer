@@ -1,0 +1,5 @@
+﻿{
+  "address": "http://dev-cerberus.stone.com.br:9200",
+  //"address": "https://indexer.stone.com.br:6443",
+  "timeOutInSeconds": 60
+}

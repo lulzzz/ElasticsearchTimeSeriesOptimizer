@@ -3,6 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
     <RootNamespace>StoneCo.ElasticsearchTimeSeriesOptimizer</RootNamespace>
+    <PackageVersion>0.1</PackageVersion>
+    <Authors>Marcus Leandro&lt;mvleandro@gmail.com&gt;</Authors>
+    <Owners>Stone.co</Owners>
+    <PackageProjectUrl>https://github.com/stone-payments/ElasticsearchTimeSeriesOptimizer</PackageProjectUrl>
+    <Summary>Api to apply good practices on a Elasticsearch cluster to Time Series purposes.</Summary>
+    <Title>Elasticsearch Time Series Optimizer</Title>
+    <Description>Api to apply good practices on a Elasticsearch cluster to Time Series purposes.</Description>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,6 +17,7 @@
     <Folder Include="ServiceLayer\" />
     <Folder Include="Processors\" />
     <Folder Include="ServiceLayer\Contracts\" />
+    <Folder Include="ConfigurationContracts\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +25,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
     <PackageReference Include="Elasticsearch.Net" Version="5.4.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
 
 </Project>

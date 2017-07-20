@@ -1,0 +1,4 @@
+﻿{
+  "address": "http://172.17.55.242:9200",
+  "timeOutInSeconds": 60
+}
