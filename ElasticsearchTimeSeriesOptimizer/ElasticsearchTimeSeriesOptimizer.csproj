@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
-    <RootNamespace>Stoneco.ElasticsearchTimeSeriesOptimizer</RootNamespace>
+    <RootNamespace>StoneCo.ElasticsearchTimeSeriesOptimizer</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

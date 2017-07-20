@@ -1,9 +1,29 @@
 ﻿<Properties StartupConfiguration="{3716476F-5637-49F3-99D2-F350CD0FD929}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="ElasticsearchTimeSeriesOptimizer Status">
     <Files>
-      <File FileName="ElasticsearchTimeSeriesOptimizer/Controllers/ShrinkController.cs" Line="73" Column="6" />
+      <File FileName="ElasticsearchTimeSeriesOptimizerTests/ShrinkControllerTest.cs" Line="71" Column="3" />
+      <File FileName="ElasticsearchTimeSeriesOptimizer/Controllers/ShrinkController.cs" Line="76" Column="5" />
       <File FileName="ElasticsearchTimeSeriesOptimizer Status" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="ElasticsearchTimeSeriesOptimizer" expanded="True">
+            <Node name="tests" expanded="True">
+              <Node name="ElasticsearchTimeSeriesOptimizerTests" expanded="True">
+                <Node name="StoneCo" expanded="True">
+                  <Node name="ElasticsearchTimeSeriesOptimizerTests" expanded="True">
+                    <Node name="ShrinkControllerTest" expanded="True">
+                      <Node name="ShrinkByDate_when_start_date_is_null" selected="True" />
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

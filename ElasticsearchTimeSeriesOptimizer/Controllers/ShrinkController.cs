@@ -11,8 +11,17 @@ namespace StoneCo.ElasticsearchTimeSeriesOptimizer.Controllers
     /// Shrink controller.
     /// </summary>
     [Route("api/v1")]
-    public class ShrinkController
+    public class ShrinkController : IShrinkController
     {
+
+        /// <summary>
+        /// Initializes a new instance of the
+        /// <see cref="T:StoneCo.ElasticsearchTimeSeriesOptimizer.Controllers.ShrinkController"/> class.
+        /// </summary>
+        public ShrinkController()
+        {
+
+        }
 
         /// <summary>
         /// Performs a shrink action on a single index.
@@ -78,6 +87,18 @@ namespace StoneCo.ElasticsearchTimeSeriesOptimizer.Controllers
 					throw new ArgumentNullException(nameof(request.IndexPrefix));
 				}
 
+                // StartDate can't be null or empty or whitespaced.
+                if (string.IsNullOrWhiteSpace((request.StartDate)))
+				{
+                    throw new ArgumentNullException(nameof(request.StartDate));
+				}
+
+				// EndDate can't be null or empty or whitespaced.
+                if (string.IsNullOrWhiteSpace((request.EndDate)))
+				{
+                    throw new ArgumentNullException(nameof(request.EndDate));
+				}
+
                 // StartDate must be a valid date.
                 if (DateTime.TryParseExact(request.StartDate, "yyyy-MM-dd", new CultureInfo("en-US"), DateTimeStyles.None, out DateTime parsedStartDate) == false){
                     throw new ArgumentException(string.Format("The argument {0} must be a valid date.", nameof(request.StartDate)));
@@ -87,6 +108,18 @@ namespace StoneCo.ElasticsearchTimeSeriesOptimizer.Controllers
                 if (DateTime.TryParseExact(request.EndDate, "yyyy-MM-dd", new CultureInfo("en-US"), DateTimeStyles.None, out DateTime parsedEndDate) == false)
 				{
                     throw new ArgumentException(string.Format("The argument {0} must be a valid date.", nameof(request.EndDate)));
+				}
+
+                // StartDate must be at least one day in the past
+                if(parsedStartDate >= DateTime.UtcNow.Date)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(request.StartDate), request.StartDate, string.Format("The {0} must be at least one day in the past.", nameof(request.StartDate)));
+                }
+
+				// EndDate must be at least onde day in the past
+				if (parsedEndDate >= DateTime.UtcNow.Date)
+				{
+                    throw new ArgumentOutOfRangeException(nameof(request.EndDate), request.EndDate, string.Format("The {0} must be at least one day in the past.", nameof(request.EndDate)));
 				}
 
                 // EndDate must be higher than StartDate.
