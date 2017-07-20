@@ -3,6 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElasticsearchTimeSeriesOptimizer", "ElasticsearchTimeSeriesOptimizer\ElasticsearchTimeSeriesOptimizer.csproj", "{3716476F-5637-49F3-99D2-F350CD0FD929}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A33F1F71-F666-4DAE-93F7-8B4CFC3CAE18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6FB54025-EF13-4FCB-8287-164B2B18ED4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElasticsearchTimeSeriesOptimizerTests", "ElasticsearchTimeSeriesOptimizerTests\ElasticsearchTimeSeriesOptimizerTests.csproj", "{CA9664C0-A708-49EE-99EF-9A64CAC400BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +19,13 @@ Global
 		{3716476F-5637-49F3-99D2-F350CD0FD929}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3716476F-5637-49F3-99D2-F350CD0FD929}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3716476F-5637-49F3-99D2-F350CD0FD929}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA9664C0-A708-49EE-99EF-9A64CAC400BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA9664C0-A708-49EE-99EF-9A64CAC400BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA9664C0-A708-49EE-99EF-9A64CAC400BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA9664C0-A708-49EE-99EF-9A64CAC400BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3716476F-5637-49F3-99D2-F350CD0FD929} = {A33F1F71-F666-4DAE-93F7-8B4CFC3CAE18}
+		{CA9664C0-A708-49EE-99EF-9A64CAC400BA} = {6FB54025-EF13-4FCB-8287-164B2B18ED4B}
 	EndGlobalSection
 EndGlobal
