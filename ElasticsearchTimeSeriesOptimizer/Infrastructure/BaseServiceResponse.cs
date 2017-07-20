@@ -1,6 +1,6 @@
 using System;
 
-namespace Stoneco.Infrastructure
+namespace StoneCo.Infrastructure
 {
     /// <summary>
     /// Represents a base service response.

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Globalization;
 using Microsoft.AspNetCore.Mvc;
-using Stoneco.ElasticsearchTimeSeriesOptimizer.Domain;
-using Stoneco.Infrastructure;
+using StoneCo.ElasticsearchTimeSeriesOptimizer.ServiceLayer.Contracts;
+using StoneCo.Infrastructure;
 
-namespace Stoneco.ElasticsearchTimeSeriesOptimizer.Controllers
+namespace StoneCo.ElasticsearchTimeSeriesOptimizer.Controllers
 {
 
     /// <summary>

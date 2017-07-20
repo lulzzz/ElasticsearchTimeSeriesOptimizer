@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Stoneco.Infrastructure
+namespace StoneCo.Infrastructure
 {
     /// <summary>
     /// Represents an error that can be safely serialized.

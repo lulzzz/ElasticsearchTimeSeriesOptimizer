@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Stoneco.ElasticsearchTimeSeriesOptimizer
+namespace StoneCo.ElasticsearchTimeSeriesOptimizer
 {
     public class Program
     {
@@ -15,7 +15,6 @@ namespace Stoneco.ElasticsearchTimeSeriesOptimizer
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
 

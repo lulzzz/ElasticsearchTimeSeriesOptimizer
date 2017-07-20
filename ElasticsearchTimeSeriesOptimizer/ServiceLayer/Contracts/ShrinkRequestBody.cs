@@ -1,4 +1,4 @@
-﻿namespace Stoneco.ElasticsearchTimeSeriesOptimizer.Domain
+﻿namespace StoneCo.ElasticsearchTimeSeriesOptimizer.ServiceLayer.Contracts
 {
 
     /// <summary>

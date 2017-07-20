@@ -1,4 +1,4 @@
-namespace Stoneco.Infrastructure
+namespace StoneCo.Infrastructure
 {
     /// <summary>
     /// The BaseServiceResponse Operation class.

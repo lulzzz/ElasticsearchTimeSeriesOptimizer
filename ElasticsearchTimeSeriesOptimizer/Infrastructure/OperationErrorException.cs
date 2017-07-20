@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Stoneco.Infrastructure
+namespace StoneCo.Infrastructure
 {
     /// <summary>
     /// Exception to be thrown for an operation error.

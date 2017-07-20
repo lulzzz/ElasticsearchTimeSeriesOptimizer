@@ -1,5 +1,8 @@
-﻿﻿namespace Stoneco.ElasticsearchTimeSeriesOptimizer.Domain
+﻿﻿namespace StoneCo.ElasticsearchTimeSeriesOptimizer.ServiceLayer.Contracts
 {
+    /// <summary>
+    /// Shrink by date request body.
+    /// </summary>
     public class ShrinkByDateRequestBody
     {
 	/// <summary>
