@@ -55,11 +55,12 @@ namespace StoneCo.ElasticsearchTimeSeriesOptimizer.Processors
 		#region Private methods
 
 		/// <summary>
-		/// Returns the node id on cluter with highest free space on disk.
+		/// Returns the name of node on cluter with highest free space on disk.
 		/// </summary>
 		/// <returns>The node with higher free space on disk.</returns>
-		private string GetNodeIdWithHigherFreeSpaceOnDisk()
+		private string GetNodeNameWithHigherFreeSpaceOnDisk()
         {
+            // Getting stats from nodes.
             ElasticsearchResponse<byte[]> response = Client.NodesStatsForAll<byte[]>("fs");
             JObject nodes = (JObject) JsonConvert.DeserializeObject(Encoding.UTF8.GetString(response.Body));
 
@@ -72,8 +73,8 @@ namespace StoneCo.ElasticsearchTimeSeriesOptimizer.Processors
                     continue;
                 }
 
-				// Getting the node id.
-				string nodeId = node.First.Parent.Path.Split('.').Last();
+                // Getting the node name.
+                string nodeName = node.First["name"].ToString();
 
                 // Sum all data partitions free space
                 long freeInBytes = 0;
@@ -82,7 +83,7 @@ namespace StoneCo.ElasticsearchTimeSeriesOptimizer.Processors
                     freeInBytes += data["free_in_bytes"].Value<long>();
                 }
 
-                nodesFreeSpace.Add(nodeId, freeInBytes);
+                nodesFreeSpace.Add(nodeName, freeInBytes);
             }
 
             // Return the id of the node with max free space.
@@ -110,7 +111,7 @@ namespace StoneCo.ElasticsearchTimeSeriesOptimizer.Processors
             #endregion
 
             // Gets the id of the data node with highest free space on disk.
-            string nodeId = this.GetNodeIdWithHigherFreeSpaceOnDisk();
+            string nodeId = this.GetNodeNameWithHigherFreeSpaceOnDisk();
 
 
 
